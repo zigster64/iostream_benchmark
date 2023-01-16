@@ -1,6 +1,4 @@
 zig-cache
 bin
+out
 text
-output_iostream
-output_stdio
-output_zig

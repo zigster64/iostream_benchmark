@@ -1,1 +1,1 @@
-hyperfine -w3 './iostream text output_iostream' './stdio text output_stdio' './bin/iostream_zig 2 text output_zig' && cmp output_iostream output_stdio && cmp output_iostream output_zig
+hyperfine -w3 './bin/iostream 1 text out/output_iostream' './bin/iostream 2 text /output2_iostream' './bin/stdio text out/output_stdio' './bin/iostream_zig 2 text out/output_zig' && cmp out/output_iostream out/output_stdio && cmp out/output_iostream out/output2_iostream && cmp out/output_iostream out/output_zig
