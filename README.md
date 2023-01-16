@@ -48,23 +48,31 @@ bash run.sh
 
 # Bench results
 
+
 ```
-Benchmark 1: ./iostream text output_iostream
-  Time (mean ± σ):      7.153 s ±  0.390 s    [User: 5.192 s, System: 1.730 s]
-  Range (min … max):    6.686 s …  8.084 s    10 runs
+Benchmark 1: ./bin/iostream 1 text out/output_iostream
+  Time (mean ± σ):      8.742 s ±  0.682 s    [User: 5.967 s, System: 2.265 s]
+  Range (min … max):    7.558 s …  9.850 s    10 runs
 
-Benchmark 2: ./stdio text output_stdio
-  Time (mean ± σ):      3.102 s ±  0.174 s    [User: 1.438 s, System: 1.568 s]
-  Range (min … max):    2.953 s …  3.417 s    10 runs
+Benchmark 2: ./bin/iostream 2 text out/output2_iostream
+  Time (mean ± σ):      2.315 s ±  0.305 s    [User: 0.394 s, System: 1.787 s]
+  Range (min … max):    1.964 s …  2.875 s    10 runs
 
-Benchmark 3: ./bin/iostream_zig 2 text output_zig
-  Time (mean ± σ):      1.122 s ±  0.048 s    [User: 0.134 s, System: 0.628 s]
-  Range (min … max):    1.068 s …  1.239 s    10 runs
+Benchmark 3: ./bin/stdio text out/output_stdio
+  Time (mean ± σ):      3.722 s ±  0.577 s    [User: 1.698 s, System: 1.818 s]
+  Range (min … max):    3.348 s …  5.299 s    10 runs
+
+  Warning: The first benchmarking run for this command was significantly slower than the rest (5.299 s). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+
+Benchmark 4: ./bin/iostream_zig 2 text out/output_zig
+  Time (mean ± σ):      1.079 s ±  0.013 s    [User: 0.148 s, System: 0.667 s]
+  Range (min … max):    1.065 s …  1.110 s    10 runs
 
 Summary
-  './bin/iostream_zig 2 text output_zig' ran
-    2.76 ± 0.20 times faster than './stdio text output_stdio'
-    6.38 ± 0.44 times faster than './iostream text output_iostream
+  './bin/iostream_zig 2 text out/output_zig' ran
+    2.15 ± 0.28 times faster than './bin/iostream 2 text out/output2_iostream'
+    3.45 ± 0.54 times faster than './bin/stdio text out/output_stdio'
+    8.10 ± 0.64 times faster than './bin/iostream 1 text out/output_iostream'
 ```
 
 
