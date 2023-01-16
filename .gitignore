@@ -1,0 +1,6 @@
+zig-cache
+bin
+text
+output_iostream
+output_stdio
+output_zig
